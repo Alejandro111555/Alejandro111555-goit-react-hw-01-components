@@ -4,7 +4,7 @@ import info from '../../data/user.json'
 import {UserAvatar, StyledInfo, Username, UserTag, UserItemInfo, UserInfoTag} from './Profile.styled'
 
 export const Profile = ( ) => {
-    const { username, tag, location, avatar, stats } = info;
+    const { username, tag, location, avatar, stats:{followers,views,likes} } = info;
     return (
         <Box
             width="250px"
@@ -27,15 +27,15 @@ export const Profile = ( ) => {
                 <StyledInfo>
                     <UserItemInfo>
                         <span>Followers </span>
-                        <UserInfoTag>{stats.followers}</UserInfoTag>
+                        <UserInfoTag>{followers}</UserInfoTag>
                     </UserItemInfo>
                     <UserItemInfo>
                         <span>Views </span>
-                        <UserInfoTag>{stats.views}</UserInfoTag>
+                        <UserInfoTag>{views}</UserInfoTag>
                     </UserItemInfo>
                     <UserItemInfo>
                         <span>Likes </span>
-                        <UserInfoTag>{stats.likes}</UserInfoTag>
+                        <UserInfoTag>{likes}</UserInfoTag>
                     </UserItemInfo>
                 </StyledInfo>
         </Box>
@@ -47,5 +47,5 @@ Profile.propTypes = {
     tag: PropTypes.string,
     location: PropTypes.string,
     avatar: PropTypes.string,
-stats: PropTypes.array
+stats: PropTypes.object
 }

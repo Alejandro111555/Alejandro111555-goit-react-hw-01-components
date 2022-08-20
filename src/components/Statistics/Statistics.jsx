@@ -11,10 +11,10 @@ export const Statistics = ({title, items }) => {
             alignItems="center">
             <h2>{title}</h2>
                 <StatList>
-                    {items.map(item => (
-                        <StatItem key={item.id}>
-                            <span>{item.label}</span>
-                            <span>{item.percentage} %</span>
+                    {items.map(({id,label,percentage}) => (
+                        <StatItem key={id}>
+                            <span>{label}</span>
+                            <span>{percentage} %</span>
                 </StatItem>
             ))}
                 </StatList>
