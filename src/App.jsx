@@ -24,7 +24,7 @@ export const App = () => {
       <Box display ="flex">
         <Statistics
           title="Upload stats"
-          items={data} />
+          stats={data} />
         </Box>
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
