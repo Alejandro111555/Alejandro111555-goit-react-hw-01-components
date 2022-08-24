@@ -3,7 +3,7 @@ import { Box } from 'components/ui/Box';
 import friends from '../../data/friends.json';
 import {StyledFriendList, FriendListItem, StatusBar} from './FriendList.styled'
 
-export const FriendList = (prop) => {
+export const FriendListItem = (prop) => {
     return (
         <Box display="flex" p='16'>
             <StyledFriendList>
@@ -20,10 +20,6 @@ export const FriendList = (prop) => {
     )
 }
 
-FriendList.propTypes = {
-    avatar: PropTypes.string,
-    name: PropTypes.string,
-    isOnline: PropTypes.bool,
-    id: PropTypes.number
-
+FriendListItem.propTypes = {
+    friends: PropTypes.array
 }
