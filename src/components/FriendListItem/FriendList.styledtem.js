@@ -5,7 +5,7 @@ display: flex;
 flex-direction: column;
 `
 
-export const FriendListItem = styled.li`
+export const FriendList = styled.li`
 display: flex;
 align-items: center;
 gap: ${p => p.theme.space[16]};

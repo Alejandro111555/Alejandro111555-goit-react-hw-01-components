@@ -1,10 +1,9 @@
 import { Box } from 'components/ui/Box';
 import PropTypes from 'prop-types';
-import info from '../../data/user.json'
 import {UserAvatar, StyledInfo, Username, UserTag, UserItemInfo, UserInfoTag} from './Profile.styled'
 
-export const Profile = ( ) => {
-    const { username, tag, location, avatar, stats:{followers,views,likes} } = info;
+export const Profile = ({ username, tag, location, avatar, stats:{followers,views,likes} } ) => {
+    
     return (
         <Box
             width="250px"
@@ -47,5 +46,9 @@ Profile.propTypes = {
     tag: PropTypes.string,
     location: PropTypes.string,
     avatar: PropTypes.string,
-    stats: PropTypes.object
+    stats: PropTypes.shape({
+        followers:PropTypes.number.isRequired,
+        views:PropTypes.number.isRequired,
+        likes:PropTypes.number.isRequired
+    }).isRequired
 }
